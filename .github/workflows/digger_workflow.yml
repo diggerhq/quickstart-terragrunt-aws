@@ -25,7 +25,7 @@ jobs:
         - name: ${{github.event.inputs.id}}
           run: echo job id ${{ inputs.id }}
         - name: digger run
-          uses: diggerhq/digger@vtest-serialization
+          uses: diggerhq/digger@vLatest
           with:
             setup-terragrunt: true
             setup-aws: true 
