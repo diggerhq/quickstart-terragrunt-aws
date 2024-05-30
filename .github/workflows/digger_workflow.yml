@@ -22,10 +22,12 @@ jobs:
         statuses: write      # required to validate combined PR status
 
       steps:
-
+        - name: ${{github.event.inputs.id}}
+          run: echo job id ${{ inputs.id }}
         - name: digger run
           uses: diggerhq/digger@vLatest
           with:
+            setup-terragrunt: true
             setup-aws: true 
             # you can also use OIDC: https://docs.digger.dev/cloud-providers/authenticating-with-oidc-on-aws
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
