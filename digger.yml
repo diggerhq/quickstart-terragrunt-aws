@@ -1,0 +1,14 @@
+generate_projects:
+  terragrunt_parsing:
+    rootDir: "projects/"
+    parallel: true
+    createProjectName: true
+    createWorkspace: true
+    defaultWorkflow: default
+workflows:
+  default:
+    plan:
+      steps:
+        - init:
+          extra_args: ["-upgrade"]
+        - plan
